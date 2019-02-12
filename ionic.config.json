@@ -1,0 +1,7 @@
+{
+  "name": "lesco",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
