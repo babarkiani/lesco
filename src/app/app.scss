@@ -1,16 +1,162 @@
-// http://ionicframework.com/docs/theming/
+
+  ion-col{
+    position: initial !important;
+
+}
+.scroll-content{
+margin-bottom: 0px !important;
+padding-bottom: 0px !important;
+}
+
+//////// CUSTOM-ICONS ////////////////
 
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+ion-icon {
+    &[class*="appname-"] {
+        // Instead of using the font-based icons
+        // We're applying SVG masks
+        mask-size: contain;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        //background:#465892;
+        width: 1.0em !important;
+        height:1.0em !important;
+    }
+//  &[class*="appname1-"] {
+//         // Instead of using the font-based icons
+//         // We're applying SVG masks
+//         mask-size: contain;
+//         mask-position: 50% 50%;
+//         mask-repeat: no-repeat;
+//         background:#621fd0;
+//         width: 1.1em !important;
+//         height:1.1em !important;
+//     }
+    // custom icons
+    &[class*="appname-fb"] {
+        mask-image: url(../assets/imgs/fb.svg);
+        background:#465892;
+    }
+    &[class*="appname-company"] {
+        mask-image: url(../assets/imgs/company.png);
+        background:#631ed2;
+    }
+    &[class*="appname-cvr"] {
+        mask-image: url(../assets/imgs/cvr.png);
+        background:#631ed2;
+    }
+    &[class*="appname-hand"] {
+        mask-image: url(../assets/imgs/categories.png);
+        background:#631ed2;
+    }
+    &[class*="appname-clock"] {
+        mask-image: url(../assets/imgs/rate.png);
+        background:#631ed2;
+    }
+
+    &[class*="appname-key"] {
+        mask-image: url(../assets/imgs/key.png);
+        background:#631ed2;
+    }
+    &[class*="appname-city"] {
+        mask-image: url(../assets/imgs/city.png);
+        background:#631ed2;
+    }
+    &[class*="appname-zip"] {
+        mask-image: url(../assets/imgs/zip.png);
+        background:#631ed2;
+    }
+    &[class*="appname-euro"] {
+        mask-image: url(../assets/imgs/euro.svg);
+        background:#676768;
+        width: 0.7em !important;
+        height: 0.7em !important;
+    }
+    &[class*="appname-tick"] {
+        mask-image: url(../assets/imgs/bullet.svg);
+        background:rgb(122, 211, 100);
+    }
+    &[class*="appname-card"] {
+        mask-image: url(../assets/imgs/card.svg);
+        background:#631ed2;
+        width: 1.5em !important;
+        height: 1.5em !important;
+    }
+    &[class*="appname-cvc"] {
+        mask-image: url(../assets/imgs/CVC.svg);
+        background:#631ed2;
+        width: 1.5em !important;
+        height: 1.5em !important;
+    }
+    &[class*="appname-calender"] {
+        mask-image: url(../assets/imgs/calender.svg);
+        background:#631ed2;
+        width: 1.5em !important;
+        height: 1.5em !important;
+    }
+
+
+ }
+
+////////////////////////////////////////
+
+.header {
+    &.bg-transparent {
+        .toolbar-background {
+            background: rgba(0, 0, 0, 0) !important;
+        }
+    }
+    &::after {
+        display: none;
+    }
+    .toolbar {
+        .toolbar-background {
+            background: #631ed2;
+            border: none !important;
+        }
+        .toolbar-content {
+            .toolbar-title {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                color: white;
+                font-weight: 400;
+                padding: 0 15px 1px;
+                padding-left: 16px;
+                text-align: left !important;
+                font-size: 2.2rem;
+                span {
+                    margin-left: auto;
+                    ion-icon {
+                        font-size: 2.3rem;
+                    }
+                    padding-top: 6px;
+                }
+            }
+        }
+        .back-button {
+            color: white;
+            min-width: 30px;
+            text-align: center;
+            margin-left: 10px;
+            padding: 0;
+            text-align: center;
+            .ion-md-arrow-back:before {
+                content: "\f3cf";
+            }
+            .back-button-icon-ios {
+                font-size: 2.2rem;
+            }
+            .back-button-text {
+                display: none !important;
+            }
+        }
+        &.toolbar-ios {
+            min-height: 59px;
+            ion-title {
+                padding: 0 !important;
+                position: relative;
+            }
+        }
+    }
+}

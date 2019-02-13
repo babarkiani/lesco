@@ -4,12 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 import { Subscription } from 'rxjs';
-import { SignupSsPage } from '../serviceSeeker/signup-ss/signup-ss';
-import { SigninSsPage } from '../serviceSeeker/signin-ss/signin-ss';
-import { SignupSpPage } from '../serviceProvider/signup-sp/signup-sp';
-import { SigninSpPage } from '../serviceProvider/signin-sp/signin-sp';
 /**
- * Generated class for the StartPage page.
+ * Generated class for the SigninSsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -17,10 +13,10 @@ import { SigninSpPage } from '../serviceProvider/signin-sp/signin-sp';
 
 @IonicPage()
 @Component({
-  selector: 'page-start',
-  templateUrl: 'start.html',
+  selector: 'page-signin-ss',
+  templateUrl: 'signin-ss.html',
 })
-export class StartPage {
+export class SigninSsPage {
   type: string = 'worker';
 
   form1: FormGroup;
@@ -33,32 +29,21 @@ export class StartPage {
   uploadImageId;
   worker;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private fb: FormBuilder, ) {
-
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StartPage');
+    private fb: FormBuilder) {
     this.form1 = this.fb.group({
       email: ['', Validators.compose([Validators.email, Validators.required])],
       password: ['', Validators.required]
     });
   }
-  gotoServiceSeekerSignup() {
-    this.navCtrl.push(SignupSsPage)
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad SigninSsPage');
+  }
+  gotoSignup() {
 
   }
-  gotoServiceSeekerLogin() {
-    this.navCtrl.push(SigninSsPage)
-  }
-  gotoServiceProviderSignup() {
-    this.navCtrl.push(SignupSpPage)
-  }
-  gotoServiceProviderLogin() {
-    this.navCtrl.push(SigninSpPage)
-  }
+  get f1() { return this.form1.controls; }
   signinCustomer(form1) {
 
   }
-
 }

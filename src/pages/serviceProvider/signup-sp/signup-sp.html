@@ -1,0 +1,305 @@
+<ion-header class="header-div">
+  <ion-navbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+  <ion-segment [(ngModel)]="Acc_profile" (ngModelChange)="onSegmentChange($event)">
+    <ion-segment-button class="segment-btn" value="All">
+      <h6 class="segmentText">Business</h6>
+    </ion-segment-button>
+    <ion-segment-button class="segment-btn" value="Online">
+      <h6 class="segmentText">Freelancer</h6>
+    </ion-segment-button>
+
+  </ion-segment>
+
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+
+    <form [formGroup]="form">
+      <div [ngSwitch]="Acc_profile" class="Profile">
+        <div *ngSwitchCase="'All'">
+          <ion-grid>
+            <ion-row no-padding style="height:150px">
+              <ion-col text-center padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+              </ion-col>
+              <ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <br>
+                <!-- <ion-icon name="ios-contact" style="font-size:120px;color:#6220CD"></ion-icon> -->
+                <img [src]=" base64Image || 'assets/imgs/Profile.png' " [class.round]="base64Image" [class.notround]="!base64Image"
+                  (tap)="choosePicture()">
+              </ion-col>
+
+              <ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon style="margin-top:12px" name="appname-company"></ion-icon>
+              </ion-col>
+              <ion-col no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" text-center placeholder="Company name" #firstName formControlName="firstName"
+                  style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon style="margin-top:12px" name="appname-cvr"></ion-icon>
+                <!-- <img src="assets/imgs/cvr.png" style="position: relative; bottom: 30px; margin-left: 25px; width: 15px; height: 15px;"> -->
+              </ion-col>
+
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" text-center placeholder="CVR number" formControlName="cvr" #cvr style="border-bottom: 1px rgb(140, 133, 180) solid; position: relative;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon style="margin-top:12px " name="appname-hand"></ion-icon>
+                <!-- <img src="assets/imgs/categories.png" style="position:relative; top: 22px; margin-left: 25px; z-index: 1; width: 15px; height: 15px;"> -->
+              </ion-col>
+              <ion-col text-left no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-item no-lines style=" border-bottom: 1px rgb(140, 133, 180) solid;">
+                  <ion-label style="font-size:14px !important">{{input}}</ion-label>
+                  <ion-select (ngModelChange)="onChange($event)" placeholder="Select your Profession" formControlName="categoryName"
+                    #categoryName style="max-width: 6000px !important; min-width: 95%;">
+                    <ion-option *ngFor="let item of categories" [value]="item.name">{{item.name}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon style="margin-top:12px" name="appname-clock"></ion-icon>
+                <!-- <img src="
+                  assets/imgs/rate.png" style="position: relative; bottom: 170px; margin-left: 25px; z-index: 1; height: 15px; width: 15px;">
+                  -->
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" placeholder="Hour rate in DKK" formControlName="rate" #rate style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="pin" style="margin-top:12px; color:#621fd0"></ion-icon>
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" placeholder="Company Address" formControlName="address" #address style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row n0-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="mail" style=" margin-top:12px;color:#621fd0"></ion-icon>
+                <!-- <img src="assets/imgs/mail.png" style="position: relative; bottom: 220px; margin-left: 25px; z-index: 1; height: 15px; width: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="email" placeholder="Email address" formControlName="email" #email style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="appname-key" style="margin-top:12px; color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/key.png" style="position: relative; bottom: 276px; margin-left: 25px; z-index: 1; height: 15px; width: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="password" placeholder="Password" formControlName="password" #password style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="phone-portrait" style="margin-top:12px; color:#621fd0; "></ion-icon>
+                <!-- <img src="assets/imgs/phone.png" style=" position: relative; bottom: 330px; margin-left: 25px; z-index: 1; width: 15px; height: 20px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input disabled type="number" placeholder="(+45)" formControlName="phone" #phone style="border-bottom: 1px rgb(140, 133, 180) solid;"
+                  class="input-text"></ion-input>
+              </ion-col>
+              <ion-col text-center no-padding col-9 col-sm-9 col-md-9 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" placeholder="Phone no." formControlName="phone" #phone style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="appname-zip" style="margin-top:12px; color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/zip.png" style="position: relative; bottom: 385px; margin-left: 25px; width: 15px; height: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" placeholder="Zip code" formControlName="zipcode" #zipcode (ionChange)="onZipcodeChange($event.value)"
+                  style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="appname-city" style="margin-top:12px; color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/city.png" style=" position: relative; bottom: 385px; margin-left: 25px; width: 15px; height: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" placeholder="City" formControlName="city" #city style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+            <br>
+            <ion-row no-padding>
+              <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <textarea class="text-area" placeholder="Write a little about yourself and your Business"
+                  formControlName="detail"></textarea>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <button ion-button block class="continue-btn" type="button" (click)="submit(form)">
+                  Continue
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+        </div>
+
+        <div *ngSwitchCase="'Online'">
+          <ion-grid>
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+              </ion-col>
+              <ion-col text-center no-padding col-6 col-sm-6 col-md-6 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <br>
+                <!-- <ion-icon name="ios-contact" style="font-size:120px;color:#6220CD"></ion-icon> -->
+                <img [src]=" base64Image || 'assets/imgs/Profile.png' " [class.round]="base64Image" [class.notround]="!base64Image"
+                  (tap)="choosePicture()">
+              </ion-col>
+              <ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+              </ion-col>
+            </ion-row>
+            <br>
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="person" style="margin-top:12px;color:#621fd0;"></ion-icon>
+              </ion-col>
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" placeholder="First name" formControlName="firstName" #firstName style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="person" style="margin-top:12px;color:#621fd0;"></ion-icon>
+              </ion-col>
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" placeholder="Last name" formControlName="lastName" #lastName style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon style="margin-top:12px " name="appname-hand"></ion-icon>
+                <!-- <img src="assets/imgs/categories.png" style="position:relative; top: 22px; margin-left: 25px; z-index: 1; width: 15px; height: 15px;"> -->
+              </ion-col>
+              <ion-col text-left no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-item no-lines style=" border-bottom: 1px rgb(140, 133, 180) solid;">
+                  <ion-label style="font-size:14px !important">{{input}}</ion-label>
+                  <ion-select (ngModelChange)="onChange($event)" placeholder="Select your Profession" formControlName="categoryName"
+                    #categoryName style="max-width: 6000px !important; min-width: 95%;">
+                    <ion-option *ngFor="let item of categories" [value]="item.name">{{item.name}}</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon style="margin-top:12px" name="appname-clock"></ion-icon>
+                <!-- <img src="
+                    assets/imgs/rate.png" style="position: relative; bottom: 170px; margin-left: 25px; z-index: 1; height: 15px; width: 15px;">
+                    -->
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" placeholder="Hour rate in DKK" formControlName="rate" #rate style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="pin" style="margin-top:12px; color:#621fd0"></ion-icon>
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" placeholder="Address" formControlName="address" #address style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row n0-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="mail" style=" margin-top:12px;color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/mail.png" style="position: relative; bottom: 220px; margin-left: 25px; z-index: 1; height: 15px; width: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="email" placeholder="Email address" formControlName="email" #email style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="appname-key" style="margin-top:12px; color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/key.png" style="position: relative; bottom: 276px; margin-left: 25px; z-index: 1; height: 15px; width: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="password" placeholder="Password" formControlName="password" #password style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="phone-portrait" style="margin-top:12px; color:#621fd0; "></ion-icon>
+                <!-- <img src="assets/imgs/phone.png" style=" position: relative; bottom: 330px; margin-left: 25px; z-index: 1; width: 15px; height: 20px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input disabled type="number" placeholder="(+45)" formControlName="phone" #phone style="border-bottom: 1px rgb(140, 133, 180) solid;"
+                  class="input-text"></ion-input>
+              </ion-col>
+              <ion-col text-center no-padding col-9 col-sm-9 col-md-9 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" placeholder="Phone no." formControlName="phone" #phone style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="appname-zip" style="margin-top:12px; color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/zip.png" style="position: relative; bottom: 385px; margin-left: 25px; width: 15px; height: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="number" placeholder="Zip code" formControlName="zipcode" #zipcode (ionChange)="onZipcodeChange($event.value)"
+                  style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+              <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-icon name="appname-city" style="margin-top:12px; color:#621fd0;"></ion-icon>
+                <!-- <img src="assets/imgs/city.png" style=" position: relative; bottom: 385px; margin-left: 25px; width: 15px; height: 15px;"> -->
+              </ion-col>
+              <ion-col text-center no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <ion-input type="text" placeholder="City" formControlName="city" #city style="border-bottom: 1px rgb(140, 133, 180) solid;"></ion-input>
+              </ion-col>
+            </ion-row>
+            <br>
+            <ion-row no-padding>
+              <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <textarea class="text-area" placeholder="Write a little about yourself and your Business"
+                  formControlName="detail"></textarea>
+              </ion-col>
+            </ion-row>
+
+            <ion-row no-padding>
+              <ion-col no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+                <button ion-button block class="continue-btn" type="button" (click)="submit(form)">
+                  Continue
+                </button>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+
+        </div>
+      </div>
+    </form>
+  </ion-grid>
+</ion-content>

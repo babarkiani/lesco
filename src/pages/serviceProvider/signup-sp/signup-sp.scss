@@ -1,0 +1,83 @@
+page-signup-sp {
+    ion-col{
+        position: initial !important;
+
+   }
+   .scroll-content{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    }
+    .header-div{
+        background-color: #631ed2;
+        height: 125px !important;
+    }
+    .input-text{
+        ::placeholder{
+            color: black !important;
+        }
+    }
+    .button {
+        text-transform: none;
+        font-size: 1.7rem;
+        letter-spacing: .5px;
+        font-weight: 300;
+        letter-spacing: .5px;
+        &.btn {
+            height: 5rem;
+        }
+        background: #631ed2 !important;
+        &:hover,
+        &:focus,
+        &:active {
+            background: #631ed2 !important;
+        }
+    }
+    .segment{
+        border-color: white !important;
+        width: 375px !important;
+    }
+    .segment-button{
+        border-color: white !important;
+    }
+    .segment-activated{
+        border-color: white !important;
+    }
+    .segmentText{
+        margin-top: 0.5em;
+        color: white;
+    }
+
+    .myCustomSelect{
+        max-width: 100% !important;
+        border-bottom: 1px rgb(140, 133, 180) solid;
+        width: 298px;
+        position: relative;
+
+
+       }
+    .text-area{
+        border: 1px rgb(140, 133, 180) solid;
+        height: 100px;
+        width: 100%;
+    }
+    .continue-btn{
+            background-color: #631ed2;
+    }
+       .switch-case-div{
+           background-color: #631ed2;
+
+           position: relative;
+           bottom: 7px;
+           z-index: 1 !important;
+       }
+
+
+ .round{
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+.notround{
+    max-width: 100px; max-height: 100px; position: relative; top: 15px
+}
+}

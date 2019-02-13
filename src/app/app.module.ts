@@ -10,6 +10,17 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StartPage } from '../pages/start/start';
+
+
+// SS pages
+import { VerificationSsPage } from '../pages/serviceSeeker/verification-ss/verification-ss';
+import { SigninSsPage } from '../pages/serviceSeeker/signin-ss/signin-ss';
+import { SignupSsPage } from '../pages/serviceSeeker/signup-ss/signup-ss';
+// SP pages
+import { VerificationSpPage } from '../pages/serviceProvider/verification-sp/verification-sp';
+import { SigninSpPage } from '../pages/serviceProvider/signin-sp/signin-sp';
+import { SignupSpPage } from '../pages/serviceProvider/signup-sp/signup-sp';
 
 @NgModule({
   declarations: [
@@ -17,11 +28,22 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    StartPage,
+    VerificationSpPage,
+    SigninSpPage,
+    SignupSpPage,
+    VerificationSsPage,
+    SigninSsPage,
+    SignupSsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, {
+      scrollAssist: true,
+      autoFocusAssist: true
+    }),
+
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -29,12 +51,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    StartPage,
+    VerificationSpPage,
+    SigninSpPage,
+    SignupSpPage,
+    VerificationSsPage,
+    SigninSsPage,
+    SignupSsPage
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
