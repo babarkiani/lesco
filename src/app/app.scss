@@ -1,12 +1,12 @@
 
-  ion-col{
-    position: initial !important;
+//   ion-col{
+//     position: initial !important;
 
-}
-.scroll-content{
-margin-bottom: 0px !important;
-padding-bottom: 0px !important;
-}
+// }
+// .scroll-content{
+// margin-bottom: 0px !important;
+// padding-bottom: 0px !important;
+// }
 
 //////// CUSTOM-ICONS ////////////////
 
@@ -91,6 +91,12 @@ ion-icon {
     &[class*="appname-calender"] {
         mask-image: url(../assets/imgs/calender.svg);
         background:#631ed2;
+        width: 1.5em !important;
+        height: 1.5em !important;
+    }
+    &[class*="appname-logo"] {
+        mask-image: url(../assets/imgs/logo.png);
+       // background:#631ed2;
         width: 1.5em !important;
         height: 1.5em !important;
     }

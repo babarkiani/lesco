@@ -17,10 +17,13 @@ import { StartPage } from '../pages/start/start';
 import { VerificationSsPage } from '../pages/serviceSeeker/verification-ss/verification-ss';
 import { SigninSsPage } from '../pages/serviceSeeker/signin-ss/signin-ss';
 import { SignupSsPage } from '../pages/serviceSeeker/signup-ss/signup-ss';
+import { ForgotPasswordSsPage } from '../pages/serviceSeeker/forgot-password-ss/forgot-password-ss';
+
 // SP pages
 import { VerificationSpPage } from '../pages/serviceProvider/verification-sp/verification-sp';
 import { SigninSpPage } from '../pages/serviceProvider/signin-sp/signin-sp';
 import { SignupSpPage } from '../pages/serviceProvider/signup-sp/signup-sp';
+import { ForgotPasswordSpPage } from '../pages/serviceProvider/forgot-password-sp/forgot-password-sp';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { SignupSpPage } from '../pages/serviceProvider/signup-sp/signup-sp';
     SignupSpPage,
     VerificationSsPage,
     SigninSsPage,
-    SignupSsPage
+    SignupSsPage,
+    ForgotPasswordSpPage,
+    ForgotPasswordSsPage
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,9 @@ import { SignupSpPage } from '../pages/serviceProvider/signup-sp/signup-sp';
     SignupSpPage,
     VerificationSsPage,
     SigninSsPage,
-    SignupSsPage
+    SignupSsPage,
+    ForgotPasswordSpPage,
+    ForgotPasswordSsPage
 
   ],
   providers: [

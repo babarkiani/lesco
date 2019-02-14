@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 import { Subscription } from 'rxjs';
+import { SignupSsPage } from '../signup-ss/signup-ss';
+import { ForgotPasswordSsPage } from '../forgot-password-ss/forgot-password-ss';
 /**
  * Generated class for the SigninSsPage page.
  *
@@ -40,7 +42,10 @@ export class SigninSsPage {
     console.log('ionViewDidLoad SigninSsPage');
   }
   gotoSignup() {
-
+    this.navCtrl.push(SignupSsPage)
+  }
+  gotoForgotPassword() {
+    this.navCtrl.push(ForgotPasswordSsPage)
   }
   get f1() { return this.form1.controls; }
   signinCustomer(form1) {

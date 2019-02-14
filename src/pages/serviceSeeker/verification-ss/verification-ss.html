@@ -1,15 +1,130 @@
-<!--
-  Generated template for the VerificationSsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
-    <ion-title>verificationSS</ion-title>
+    <ion-title>
+      <p style="font-size:20px; color: #fff">LESCO</p>
+    </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
+<ion-content style="margin-top:70px" padding>
+  <ion-grid>
 
-<ion-content padding>
+    <br> <br> <br>
+    <!-- <ion-row>
+      <ion-col text-center no-padding col-3 col-sm-3 col-md-3 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
 
+      </ion-col>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <img src="assets/imgs/logo.png">
+      </ion-col>
+      <ion-col text-left no-padding col-5 col-sm-5 col-md-5 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <h6 class="title">LESCO</h6>
+      </ion-col>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      </ion-col>
+    </ion-row> -->
+    <ion-row>
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+      </ion-col>
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="font-size: 15px; font-family:Arial; color: #444444;">Are you a Service Seeker?</p>
+      </ion-col>
+      <!-- <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+                     </ion-col> -->
+    </ion-row>
+    <br>
+    <ion-row style=" bottom:20px;">
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style="font-size: 12px; font-family:Arial; color: #494848;">Signup to post jobs and find local
+          service providers</p>
+      </ion-col>
+
+    </ion-row>
+
+    <!-- <ion-row>
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <button ion-button outline block class="fbButton">
+          <ion-icon class=" fbIcon" name="appname-fb"></ion-icon>
+          <p class="loginWithFacebook" style="color:#465892; font-family:Arial; font-size: 13px;">
+            Sign up with Facebook</p>
+        </button>
+      </ion-col>
+
+    </ion-row>
+    <br> <br>
+    <ion-row>
+      <ion-col col-5 style="border-bottom: 1px rgb(140, 133, 180) solid; position: relative; bottom: 13px;"></ion-col>
+
+      <ion-col col-2 text-center>OR</ion-col>
+
+      <ion-col col-5 style="border-bottom: 1px rgb(140, 133, 180) solid; bottom: 13px;"></ion-col>
+    </ion-row> -->
+    <br> <br>
+    <form [formGroup]="form1">
+      <ion-row no-padding style="">
+        <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-icon name="mail" style="color:rgb(117, 74, 185);"></ion-icon>
+        </ion-col>
+        <ion-col text-center no-padding col-11 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-input type="email" formControlName="email" #email placeholder="Email address" style="border-bottom: 1px rgb(140, 133, 180) solid; bottom: 13px;"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <!-- <ion-row no-padding style="">
+        <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-icon name="key" style="color:rgb(117, 74, 185);font-size: 20px;"></ion-icon>
+        </ion-col>
+        <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-input type="number" formControlName="password" #password placeholder="Password" style="border-bottom: 1px rgb(140, 133, 180) solid; bottom: 13px;"></ion-input>
+        </ion-col>
+      </ion-row> -->
+      <ion-row>
+        <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <!-- <ion-icon name="phone-portrait" style="color:rgb(117, 74, 185); position: relative; bottom: 55px; margin-left: 25px; z-index: 1;"></ion-icon> -->
+          <ion-icon name="phone-portrait" style="margin-top:12px; color:#621fd0; "></ion-icon>
+        </ion-col>
+        <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-input disabled type="number" placeholder="(+45)" style="border-bottom: 1px rgb(140, 133, 180) solid;"
+            class="input-text"></ion-input>
+        </ion-col>
+        <ion-col text-center no-padding col-9 col-sm-9 col-md-9 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <ion-input type="number" placeholder="Phone no." formControlName="phone" #phone style="border-bottom: 1px rgb(140, 133, 180) solid; "></ion-input>
+        </ion-col>
+      </ion-row>
+    </form>
+    <!-- <ion-row no-padding>
+      <ion-col text-center no-padding col-7 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      </ion-col>
+      <ion-col text-right no-padding col-5 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p> <a (click)="gotoForgotPassword()" style="color:rgb(101, 44, 194);border-bottom: 1px rgb(62, 17, 134) solid; font-size: 13px">Forgot
+            password?</a> </p>
+      </ion-col>
+
+    </ion-row> -->
+    <br> <br>
+    <ion-row>
+
+      <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+
+        <button ion-button block (click)="signinCustomer(form1)">
+          <!-- <ion-icon class="signUpIcon" name="md-person-add"></ion-icon> -->
+          <p class="signUp" style="color:white; font-family:Arial; font-size: 15px;">Send Verification Code</p>
+        </button>
+      </ion-col>
+
+    </ion-row>
+
+    <br><br>
+    <!-- <ion-row padding style="">
+      <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+      </ion-col>
+
+      <ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+        <p style=" bottom: 30px;">Don't have an account? <a style="color:#6220CD" (click)="gotoSignup()">Signup</a></p>
+      </ion-col>
+    </ion-row> -->
+  </ion-grid>
 </ion-content>

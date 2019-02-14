@@ -4,6 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 import { Subscription } from 'rxjs';
+import { SignupSpPage } from '../signup-sp/signup-sp';
+import { ForgotPasswordSpPage } from '../forgot-password-sp/forgot-password-sp';
 
 /**
  * Generated class for the SigninSpPage page.
@@ -42,7 +44,10 @@ export class SigninSpPage {
 
   }
   gotoSignup() {
-
+    this.navCtrl.push(SignupSpPage)
+  }
+  gotoForgotPassword() {
+    this.navCtrl.push(ForgotPasswordSpPage)
   }
   get f1() { return this.form1.controls; }
   signinCustomer(form1) {

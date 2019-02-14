@@ -34,8 +34,7 @@
                      </ion-col> -->
     </ion-row>
     <br>
-    <ion-row style="
-              position:relative; bottom:20px;">
+    <ion-row style=" bottom:20px;">
 
       <ion-col text-center no-padding col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
         <p style="font-size: 12px; font-family:Arial; color: #494848;">Login and make your
@@ -65,7 +64,7 @@
     </ion-row> -->
     <br> <br>
     <form [formGroup]="form1">
-      <ion-row no-padding style="position:relative;">
+      <ion-row no-padding>
         <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <ion-icon name="mail" style="color:rgb(117, 74, 185);"></ion-icon>
         </ion-col>
@@ -74,12 +73,12 @@
         </ion-col>
       </ion-row>
 
-      <ion-row no-padding style="position:relative;">
+      <ion-row no-padding>
         <ion-col text-center no-padding col-1 col-sm-1 col-md-1 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
           <ion-icon name="key" style="color:rgb(117, 74, 185);font-size: 20px;"></ion-icon>
         </ion-col>
         <ion-col text-center no-padding col-11 col-sm-11 col-md-11 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-          <ion-input type="password" formControlName="password" #password placeholder="Password" style="border-bottom: 1px rgb(140, 133, 180) solid; position: relative; bottom: 13px;"></ion-input>
+          <ion-input type="password" formControlName="password" #password placeholder="Password" style="border-bottom: 1px rgb(140, 133, 180) solid; bottom: 13px;"></ion-input>
         </ion-col>
       </ion-row>
     </form>
@@ -87,7 +86,7 @@
       <ion-col text-center no-padding col-7 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       </ion-col>
       <ion-col text-right no-padding col-5 col-sm-4 col-md-4 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <a style="color:rgb(101, 44, 194);border-bottom: 1px rgb(62, 17, 134) solid; position: relative; font-size: 13px">Forgot
+        <a (click)="gotoForgotPassword()" style="color:rgb(101, 44, 194);border-bottom: 1px rgb(62, 17, 134) solid; font-size: 13px">Forgot
           password?</a>
       </ion-col>
 
@@ -106,12 +105,12 @@
     </ion-row>
 
     <br><br>
-    <ion-row padding style="position:relative;">
+    <ion-row padding style="">
       <ion-col text-center no-padding col-2 col-sm-2 col-md-2 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
       </ion-col>
 
       <ion-col text-center no-padding col-8 col-sm-8 col-md-8 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
-        <p style="position:relative; bottom: 30px;">Don't have an account? <a style="color:#6220CD" (click)="gotoSignup()">Signup</a></p>
+        <p style="bottom: 30px;">Don't have an account? <a style="color:#6220CD" (click)="gotoSignup()">Signup</a></p>
       </ion-col>
     </ion-row>
   </ion-grid>

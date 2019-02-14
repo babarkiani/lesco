@@ -1,9 +1,19 @@
 page-signin-sp {
+    ion-col{
+        position: initial !important;
+
+   }
+   .scroll-content{
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
+    }
     ion-content{
+
         background-color:  #ffffff !important;
         ion-input{
             font-size: 1em;
         }
+
         .button {
             text-transform: none;
             font-size: 1.7rem;

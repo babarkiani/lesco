@@ -9,13 +9,14 @@ import { SigninSpPage } from '../pages/serviceProvider/signin-sp/signin-sp';
 import { SigninSsPage } from '../pages/serviceSeeker/signin-ss/signin-ss';
 import { SignupSsPage } from '../pages/serviceSeeker/signup-ss/signup-ss';
 import { SignupSpPage } from '../pages/serviceProvider/signup-sp/signup-sp';
+import { VerificationSsPage } from '../pages/serviceSeeker/verification-ss/verification-ss';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage: any = StartPage;
+  rootPage: any = VerificationSsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

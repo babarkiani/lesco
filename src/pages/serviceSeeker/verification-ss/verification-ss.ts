@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+
+import { Subscription } from 'rxjs';
 /**
  * Generated class for the VerificationSsPage page.
  *
@@ -14,8 +17,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'verification-ss.html',
 })
 export class VerificationSsPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  form1: FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private fb: FormBuilder) {
+    this.form1 = this.fb.group({
+      email: ['', Validators.compose([Validators.email, Validators.required])],
+      password: ['', Validators.required],
+      phone: ['', Validators.compose([
+        Validators.required, Validators.maxLength(12)
+      ])],
+    });
   }
 
   ionViewDidLoad() {
