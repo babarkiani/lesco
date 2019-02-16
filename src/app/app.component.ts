@@ -16,7 +16,7 @@ import { VerificationSsPage } from '../pages/serviceSeeker/verification-ss/verif
 })
 export class MyApp {
   //rootPage:any = TabsPage;
-  rootPage: any = VerificationSsPage;
+  rootPage: any = StartPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

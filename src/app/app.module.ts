@@ -18,12 +18,20 @@ import { VerificationSsPage } from '../pages/serviceSeeker/verification-ss/verif
 import { SigninSsPage } from '../pages/serviceSeeker/signin-ss/signin-ss';
 import { SignupSsPage } from '../pages/serviceSeeker/signup-ss/signup-ss';
 import { ForgotPasswordSsPage } from '../pages/serviceSeeker/forgot-password-ss/forgot-password-ss';
+import { OtpCodeSsPage } from '../pages/serviceSeeker/otp-code-ss/otp-code-ss';
+
+
 
 // SP pages
 import { VerificationSpPage } from '../pages/serviceProvider/verification-sp/verification-sp';
 import { SigninSpPage } from '../pages/serviceProvider/signin-sp/signin-sp';
 import { SignupSpPage } from '../pages/serviceProvider/signup-sp/signup-sp';
 import { ForgotPasswordSpPage } from '../pages/serviceProvider/forgot-password-sp/forgot-password-sp';
+import { OtpCodeSpPage } from '../pages/serviceProvider/otp-code-sp/otp-code-sp';
+import { ApiProvider } from '../providers/api/api';
+import { AuthProvider } from '../providers/auth/auth';
+import { HelperProvider } from '../providers/helper/helper';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +48,9 @@ import { ForgotPasswordSpPage } from '../pages/serviceProvider/forgot-password-s
     SigninSsPage,
     SignupSsPage,
     ForgotPasswordSpPage,
-    ForgotPasswordSsPage
+    ForgotPasswordSsPage,
+    OtpCodeSpPage,
+    OtpCodeSsPage
   ],
   imports: [
     BrowserModule,
@@ -65,13 +75,18 @@ import { ForgotPasswordSpPage } from '../pages/serviceProvider/forgot-password-s
     SigninSsPage,
     SignupSsPage,
     ForgotPasswordSpPage,
-    ForgotPasswordSsPage
+    ForgotPasswordSsPage,
+    OtpCodeSpPage,
+    OtpCodeSsPage
 
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ApiProvider,
+    AuthProvider,
+    HelperProvider
   ]
 })
 export class AppModule { }

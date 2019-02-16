@@ -6,6 +6,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { SignupSsPage } from '../signup-ss/signup-ss';
 import { ForgotPasswordSsPage } from '../forgot-password-ss/forgot-password-ss';
+import { VerificationSsPage } from '../verification-ss/verification-ss';
 /**
  * Generated class for the SigninSsPage page.
  *
@@ -30,6 +31,10 @@ export class SigninSsPage {
   userId;
   uploadImageId;
   worker;
+
+  // My
+  email;
+  password;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private fb: FormBuilder) {
     this.form1 = this.fb.group({
@@ -42,13 +47,13 @@ export class SigninSsPage {
     console.log('ionViewDidLoad SigninSsPage');
   }
   gotoSignup() {
-    this.navCtrl.push(SignupSsPage)
+    this.navCtrl.push(VerificationSsPage);
   }
   gotoForgotPassword() {
-    this.navCtrl.push(ForgotPasswordSsPage)
+    this.navCtrl.push(ForgotPasswordSsPage);
   }
   get f1() { return this.form1.controls; }
-  signinCustomer(form1) {
+  signinCustomer() {
 
   }
 }

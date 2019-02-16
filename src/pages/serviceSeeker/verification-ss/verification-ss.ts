@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 import { Subscription } from 'rxjs';
+import { OtpCodeSsPage } from '../otp-code-ss/otp-code-ss';
 /**
  * Generated class for the VerificationSsPage page.
  *
@@ -18,11 +19,12 @@ import { Subscription } from 'rxjs';
 })
 export class VerificationSsPage {
   form1: FormGroup;
+  email: any;
+  phone: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private fb: FormBuilder) {
     this.form1 = this.fb.group({
       email: ['', Validators.compose([Validators.email, Validators.required])],
-      password: ['', Validators.required],
       phone: ['', Validators.compose([
         Validators.required, Validators.maxLength(12)
       ])],
@@ -31,6 +33,9 @@ export class VerificationSsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VerificationSsPage');
+  }
+  sendVerification() {
+    this.navCtrl.push(OtpCodeSsPage);
   }
 
 }
