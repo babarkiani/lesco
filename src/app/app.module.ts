@@ -13,6 +13,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StartPage } from '../pages/start/start';
 
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { Firebase } from '@ionic-native/firebase';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
+
+
+import { config } from '../environment/environment';
+
 // SS pages
 import { VerificationSsPage } from '../pages/serviceSeeker/verification-ss/verification-ss';
 import { SigninSsPage } from '../pages/serviceSeeker/signin-ss/signin-ss';
@@ -58,6 +68,11 @@ import { HelperProvider } from '../providers/helper/helper';
       scrollAssist: true,
       autoFocusAssist: true
     }),
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+
 
   ],
   bootstrap: [IonicApp],
@@ -83,10 +98,11 @@ import { HelperProvider } from '../providers/helper/helper';
   providers: [
     StatusBar,
     SplashScreen,
+    Firebase,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ApiProvider,
     AuthProvider,
-    HelperProvider
+    HelperProvider,
   ]
 })
 export class AppModule { }

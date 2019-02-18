@@ -1,5 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { firestore } from 'firebase';
 
 /*
   Generated class for the ApiProvider provider.
@@ -10,7 +12,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiProvider {
 
-  constructor(public http: HttpClient) {
+  constructor(private afs: AngularFirestore) {
     console.log('Hello ApiProvider Provider');
   }
 
