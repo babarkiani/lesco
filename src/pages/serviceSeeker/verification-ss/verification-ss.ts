@@ -39,17 +39,36 @@ export class VerificationSsPage {
     console.log('ionViewDidLoad VerificationSsPage');
   }
   sendVerification() {
-    this.helper.presentBottomToast('An sms has been sent on your number.')
+    //this.helper.presentBottomToast('An sms has been sent on your number.')
     //this.firestore.verifyPhoneNumber
+    this.sendCode();
     console.log(this.phone);
+    //this.navCtrl.push(OtpCodeSsPage);
+
+    // this.firestore.verifyPhoneNumber(`+92${this.phone}`, 60).then(cred => {
+    //   this.helper.presentBottomToast('Done');
+    //   this.credentials = cred.verificationId;
+    //   localStorage.setItem('cred', this.credentials);
+    //   console.log(this.credentials)
+    //   alert(this.credentials);
+    // })
+    //this.navCtrl.push(OtpCodeSsPage);
+  }
+
+  sendCode() {
+    //window.fire
+    console.log(this.credentials)
     this.firestore.verifyPhoneNumber(`+92${this.phone}`, 60).then(cred => {
+      this.helper.presentBottomToast('Done :');
+      this.helper.presentToast(cred.verificationId, 5000, 'top');
       this.credentials = cred.verificationId;
       localStorage.setItem('cred', this.credentials);
       console.log(this.credentials)
       alert(this.credentials);
-      this.navCtrl.push(OtpCodeSsPage);
+      //this.navCtrl.push(OtpCodeSsPage);
+    }, err => {
+      this.helper.presentBottomToast(err.message);
     })
-    //this.navCtrl.push(OtpCodeSsPage);
   }
 
 }

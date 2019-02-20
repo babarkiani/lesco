@@ -1,8 +1,8 @@
 export const config = {
-    apiKey: "AIzaSyDIfpaqrDGdMLpDLAZr8xGWyuaunc7B_N0",
-    authDomain: "challengeapp-73877.firebaseapp.com",
-    databaseURL: "https://challengeapp-73877.firebaseio.com",
-    projectId: "challengeapp-73877",
-    storageBucket: "challengeapp-73877.appspot.com",
-    messagingSenderId: "429132762634"
+    apiKey: "AIzaSyDpnOpaucZ9Uas0fdiBQojQi3aYu2lECeg",
+    authDomain: "lesco-final.firebaseapp.com",
+    databaseURL: "https://lesco-final.firebaseio.com",
+    projectId: "lesco-final",
+    storageBucket: "lesco-final.appspot.com",
+    messagingSenderId: "724060710625"
 };
